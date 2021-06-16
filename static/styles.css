@@ -17,3 +17,7 @@ body {
 tbody {
     overflow: scroll;
 }
+
+.textgreen {
+    color: rgb(41, 148, 87);
+}

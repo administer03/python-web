@@ -21,7 +21,14 @@ def index():
    # items = "".join(items)
    df = pd.DataFrame(data)
    html = df.to_html(classes='table table-striped', index = False, header=None)
-   return render_template("index.html", content=html) 
+   return render_template("index.html", content=html)
+
+@app.route('/cm_bot')
+def cm_bot():
+   sheet = client.open("bot_history").worksheet('sheet2')
+   data = sheet.get_all_values()
+   data = data[0][0].replace('\n', '<br>')
+   return render_template("cm_bot.html", content=data)
 
 if __name__ == '__main__':
    app.run(debug=False)
