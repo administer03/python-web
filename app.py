@@ -1,34 +1,31 @@
 from flask import Flask, render_template
-import gspread 
-from oauth2client.service_account import ServiceAccountCredentials 
-from pprint import pprint 
 import pandas as pd
-import numpy as np
-
-
-scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"] 
-creds = ServiceAccountCredentials.from_json_keyfile_name("sheet_bot.json", scope) 
-client = gspread.authorize(creds) 
-
+from firebase import firebase
 
 app = Flask(__name__)
+
+url_firebase = 'https://db-bot803-default-rtdb.firebaseio.com/'
+messenger = firebase.FirebaseApplication(url_firebase)
 	
 @app.route('/') # เป็นการเข้าหน้าแรก เสมือน local host:3000
-
 def index():
-   sheet = client.open("bot_history").sheet1 
-   data = sheet.get_all_values()
-   # items = "".join(items)
-   df = pd.DataFrame(data)
-   html = df.to_html(classes='table table-striped', index = False, header=None)
-   return render_template("index.html", content=html)
+   return render_template("cm_bot.html")
 
-@app.route('/cm_bot')
-def cm_bot():
-   sheet = client.open("bot_history").worksheet('sheet2')
-   data = sheet.get_all_values()
-   data = data[0][0].replace('\n', '<br>')
-   return render_template("cm_bot.html", content=data)
+@app.route('/buy')
+def buy():
+   content = messenger.get('/bot_transaction', 'Bought')
+   del content[0]
+   df = pd.DataFrame.from_dict(content, orient='columns')
+   html = df.to_html(classes='table table-striped', index = False).replace('style="text-align: right;"', '')
+   return render_template("buy.html", content=html)
+
+@app.route('/sell')
+def sell():
+   content2 = messenger.get('/bot_transaction', 'Sold')
+   del content2[0]
+   df2 = pd.DataFrame.from_dict(content2, orient='columns')
+   html2 = df2.to_html(classes='table table-striped', index = False).replace('style="text-align: right;"', '')
+   return render_template("sell.html", content=html2)
 
 if __name__ == '__main__':
    app.run(debug=False)

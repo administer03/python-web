@@ -9,17 +9,17 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">My bot</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">My bot</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Bot trade history</a>
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('buy') }}">Bought History</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url_for('cm_bot') }}">Bot process</a>
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('sell') }}">Sold History</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -57,8 +57,8 @@
         <div class="container" style="margin-top: 50px;">
             <div class="card" style="height: 100%">
                 <div class="card-body">
-                    <h4 class="card-title">Bot trade history</h4>
-                    <p class="card-text">{{ content|safe }}</p>
+                    <h4 class="card-title">Sold History</h4>
+                    <p class="card-text" style="text-align: center;">{{ content|safe }}</p>
                     <!-- <a href="# " class="btn btn-primary ">Dowload to file.txt</a> -->
                 </div>
             </div>
