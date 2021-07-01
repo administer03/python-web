@@ -13,19 +13,26 @@ def index():
 
 @app.route('/buy')
 def buy():
-   content = messenger.get('/bot_transaction', 'Bought')
-   del content[0]
-   df = pd.DataFrame.from_dict(content, orient='columns')
-   html = df.to_html(classes='table table-striped', index = False).replace('style="text-align: right;"', '')
-   return render_template("buy.html", content=html)
+   try:
+      content = messenger.get('/bot_transaction', 'Bought')
+      del content[0]
+      df = pd.DataFrame.from_dict(content, orient='columns')
+      html = df.to_html(classes='table table-striped', index = False).replace('style="text-align: right;"', '')
+      return render_template("buy.html", content=html)
+   except:
+      return render_template("buy.html", content='Now nothing has changed.')
+
 
 @app.route('/sell')
 def sell():
-   content2 = messenger.get('/bot_transaction', 'Sold')
-   del content2[0]
-   df2 = pd.DataFrame.from_dict(content2, orient='columns')
-   html2 = df2.to_html(classes='table table-striped', index = False).replace('style="text-align: right;"', '')
-   return render_template("sell.html", content=html2)
+   try:
+      content2 = messenger.get('/bot_transaction', 'Sold')
+      del content2[0]
+      df2 = pd.DataFrame.from_dict(content2, orient='columns')
+      html2 = df2.to_html(classes='table table-striped', index = False).replace('style="text-align: right;"', '')
+      return render_template("sell.html", content=html2)
+   except:
+      return render_template("sell.html", content='Now nothing has changed.')
 
 if __name__ == '__main__':
    app.run(debug=False)

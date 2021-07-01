@@ -5,50 +5,19 @@
     <title>status bot</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('index') }}">My bot</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url_for('buy') }}">Bought History</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url_for('sell') }}">Sold History</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Link
-            </a> -->
-                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
-                </li> -->
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
+<!-- Nav bar -->
+<div class="topnav" id="myTopnav">
+    <a href="{{ url_for('index') }}" class="active">My bot</a>
+    <a href="{{ url_for('buy') }}">Bought History</a>
+    <a href="{{ url_for('sell') }}">Sold History</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
 
 <body>
 
@@ -62,10 +31,63 @@
                     </div>
                 </div>
             </div> -->
-        <div style="margin: 15%;">
-            <h1>Welcome To My World!</h1><br>
-            <h4>(Taned Singlow)</h4>
+        <div style="margin: 2%;">
+            <h1>Welcome To My Bot!</h1><br>
+            <img src="/static/image/bot.png">
         </div>
 
     </center>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-light btn-floating m-1" target="_blank" href="https://www.facebook.com/tanad.singlow" role="button"><i><img src="/static/image/facebook.png" style="max-height: 25px; max-width: 25px;"></i
+        ></a>
+
+                <!-- Github -->
+                <a class="btn btn-light btn-floating m-1" target="_blank" href="https://github.com/administer03" role="button"><i><img src="/static/image/git.png" style="max-height: 25px; max-width: 25px;"></i
+        ></a>
+            </section>
+            <!-- Section: Social media -->
+
+
+
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    01110011 01110101 01110000 01110000 01101111 01110010 01110100 00100000 01101101 01100101 00100000 00110000 00111001 00110111 00111001 00110011 00111001 00110110 00111000 00110000 00110011 </p>
+            </section>
+            <!-- Section: Text -->
+
+
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <!-- for navbar mobile screen -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
 </body>
