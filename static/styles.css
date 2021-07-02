@@ -1,4 +1,4 @@
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .topnav a:not(:first-child) {
         display: none;
     }
@@ -8,7 +8,7 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .topnav.responsive {
         position: relative;
     }
@@ -25,6 +25,81 @@
     img {
         width: 100%;
         height: 50%;
+    }
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+    table,
+    .table-striped,
+    .dataframe {
+        max-width: 100%;
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #ccc;
+    }
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+    /*
+	Label the data
+	*/
+    td:nth-of-type(1):before {
+        content: "Action";
+    }
+    td:nth-of-type(2):before {
+        content: "Bot Point Different";
+    }
+    td:nth-of-type(3):before {
+        content: "Bought";
+    }
+    td:nth-of-type(4):before {
+        content: "Cash Balance(USD)";
+    }
+    td:nth-of-type(5):before {
+        content: "Change(percent)";
+    }
+    td:nth-of-type(6):before {
+        content: "Coin Volumn";
+    }
+    td:nth-of-type(7):before {
+        content: "Date-time";
+    }
+    td:nth-of-type(8):before {
+        content: "Last Price";
+    }
+    td:nth-of-type(9):before {
+        content: "Point";
+    }
+    td:nth-of-type(10):before {
+        content: "Sell Point";
+    }
+    td:nth-of-type(11):before {
+        content: "Total Profit/Loss";
     }
 }
 
