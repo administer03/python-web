@@ -132,6 +132,14 @@
     display: none;
 }
 
+.header-navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1030;
+    /* to prevent the navbar getting covered up by other content */
+    max-height: 100%;
+}
+
 td {
     text-align: center;
     vertical-align: middle;
@@ -154,4 +162,8 @@ tbody {
 
 .textgreen {
     color: rgb(41, 148, 87);
+}
+
+footer {
+    margin-top: 5%;
 }
