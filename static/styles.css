@@ -165,5 +165,15 @@ tbody {
 }
 
 footer {
-    margin-top: 5%;
+    margin-top: 10%;
+}
+
+.flex-home {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    justify-content: center;
+    max-width: 60%;
+    color: rgb(60, 194, 67);
+    padding: 1%;
 }

@@ -21,8 +21,8 @@
 
 <body>
 
-    <center>
-        <!-- <div hx-get="/cm_bot" hx-trigger="every 2s">
+
+    <!-- <div hx-get="/cm_bot" hx-trigger="every 2s">
             <div class="container" style="margin-top: 50px;">
                 <div class="card bg-dark textgreen" style="height: 100%; width: 50%;">
                     <div class="card-body ">
@@ -31,12 +31,28 @@
                     </div>
                 </div>
             </div> -->
-        <div style="margin: 2%;">
-            <h1>Welcome To My Bot!</h1><br>
-            <img src="/static/image/bot.png">
-        </div>
+    <div style="margin: 2%; text-align: center;">
+        <h1>Realtime Robotics</h1><br>
+        <center>
+            <div class="flex-home">
+                <p></p>Coin Symbol: {{ content_CS|safe }} <br>Date-Time: {{ content_Dt|safe }} || Action: {{ content_act|safe }}
+                <br>Last Price: {{ content_LP|safe }} || Change(%): {{ content_chg|safe }}
+                <br>Cash Balance(USD): {{ content_CB|safe }} || Total Profit/Loss: {{ content_TPL|safe }}
+                </p>
+            </div>
+        </center>
 
-    </center>
+        <img src="/static/image/bot.png">
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 

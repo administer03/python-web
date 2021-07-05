@@ -9,7 +9,36 @@ messenger = firebase.FirebaseApplication(url_firebase)
 	
 @app.route('/') # เป็นการเข้าหน้าแรก เสมือน local host:3000
 def index():
-   return render_template("cm_bot.html")
+   try:
+      content = messenger.get('/bot_transaction', 'last_action')
+      del content[0]
+      action = None
+      CB = None
+      chg = None
+      CS = None
+      Dt = None
+      LP = None
+      TPL = None
+      for key, values in content[0].items():
+         if key == 'Action':
+            action = values
+         elif key == 'Cash Balance(USD)':
+            CB = values
+         elif key == 'Change(percent)':
+            chg  = values
+         elif key == 'Coin Symbol':
+            CS = values
+         elif key == 'Date-time':
+            Dt = values
+         elif key == 'Last Price':
+            LP = values
+         elif key == 'Total Profit Loss':
+            TPL = values
+               
+      return render_template("cm_bot.html",content_act=action, content_CB = CB, content_chg = chg, content_CS = CS,
+      content_Dt = Dt, content_LP = LP, content_TPL = TPL)
+   except:
+      return render_template("cm_bot.html", content='Now nothing has changed.')
 
 @app.route('/buy')
 def buy():
