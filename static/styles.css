@@ -10,10 +10,10 @@
 
 @media screen and (max-width: 1000px) {
     .topnav.responsive {
-        position: relative;
+        position: fixed;
     }
     .topnav.responsive .icon {
-        position: absolute;
+        position: fixed;
         right: 0;
         top: 0;
     }
@@ -21,6 +21,12 @@
         float: none;
         display: block;
         text-align: left;
+    }
+    .card {
+        margin-top: 25%;
+    }
+    .home-margin {
+        margin-top: 25%;
     }
     img {
         width: 100%;
@@ -106,6 +112,10 @@
 .topnav {
     overflow: hidden;
     background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
 }
 
 .topnav a {
@@ -187,13 +197,17 @@ footer {
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: rgb(233, 221, 61);
+    background-color: #04AA6D;
     color: rgb(0, 0, 0);
     cursor: pointer;
     padding: 12px;
-    border-radius: 50px;
+    border-radius: 8px;
 }
 
 #myBtn:hover {
-    background-color: #555;
+    background-color: rgb(233, 221, 61);
+}
+
+.fixedElement {
+    position: relative;
 }
