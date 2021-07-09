@@ -207,7 +207,3 @@ footer {
 #myBtn:hover {
     background-color: rgb(233, 221, 61);
 }
-
-.fixedElement {
-    position: relative;
-}
