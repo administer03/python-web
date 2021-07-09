@@ -198,12 +198,12 @@ footer {
     border: none;
     outline: none;
     background-color: #04AA6D;
-    color: rgb(0, 0, 0);
+    color: rgb(44, 44, 44);
     cursor: pointer;
     padding: 12px;
     border-radius: 8px;
 }
 
 #myBtn:hover {
-    background-color: rgb(233, 221, 61);
+    background-color: #ddd;
 }
