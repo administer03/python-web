@@ -107,6 +107,15 @@
     td:nth-of-type(11):before {
         content: "Total Profit/Loss";
     }
+    div #fhome {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: black;
+        justify-content: center;
+        max-width: 100%;
+        color: rgb(60, 194, 67);
+        padding: 1%;
+    }
 }
 
 .topnav {
@@ -178,12 +187,12 @@ footer {
     margin-top: 10%;
 }
 
-.flex-home {
+#fhome {
     display: flex;
     flex-wrap: wrap;
     background-color: black;
     justify-content: center;
-    max-width: 60%;
+    max-width: 55%;
     color: rgb(60, 194, 67);
     padding: 1%;
 }
