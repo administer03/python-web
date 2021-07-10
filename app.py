@@ -22,17 +22,17 @@ def index():
       for key, values in content[0].items():
          if key == 'Action':
             action = values
-         elif key == 'Cash Balance(USD)':
+         elif key == 'CashBalance':
             CB = values
-         elif key == 'Change(percent)':
+         elif key == 'Change':
             chg  = values
-         elif key == 'Coin Symbol':
+         elif key == 'CoinSymbol':
             CS = values
-         elif key == 'Date-time':
+         elif key == 'DateTime':
             Dt = values
-         elif key == 'Last Price':
+         elif key == 'LastPrice':
             LP = values
-         elif key == 'Total Profit Loss':
+         elif key == 'TotalProfitLoss':
             TPL = values
                
       return render_template("cm_bot.html",content_act=action, content_CB = CB, content_chg = chg, content_CS = CS,
